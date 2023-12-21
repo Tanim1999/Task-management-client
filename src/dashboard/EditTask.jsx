@@ -3,13 +3,19 @@ import { useForm } from "react-hook-form";
 
 import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
-import useAuth from "../hooks/useAuth";
+
+import { useNavigate, useParams } from "react-router-dom";
+import useTask from "../hooks/usetask";
 
 
-const CreateTask = () => {
-   
+const EditTask = () => {
+   const {id} = useParams()
+   const [task,reTask]= useTask(id)
+   console.log("task vai",task)
+   const{title,description,priority,deadLine,status}=task
     const axiosPublic = useAxiosPublic()
-    const { user } = useAuth()
+    const navigate = useNavigate()
+    
 
     const {
         register,
@@ -23,26 +29,26 @@ const CreateTask = () => {
         
         
 
-        const uploadInfo = {
+        const editedInfo = {
             title: data.title,
             description: data.description,
             priority: data.priority,
             deadLine: data.deadLine,
-            user: user.uid,
-            creationDate: new Date().toISOString(),
-            email: user.email,
-            status: "to-do"
+            
+            status: status
         
         }
-        const task = await axiosPublic.post('/tasks', uploadInfo);
+        const task = await axiosPublic.patch(`/tasks/${id}`, editedInfo);
         console.log(task.data)
-        if (task.data.insertedId) {
+        if (task.data.modifiedCount>0) {
 
             reset()
+            reTask()
+            navigate("/dashBoard/dashHome")
             Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: `${data.title} is added successfully.`,
+                title: `${data.title} is edited successfully.`,
                 showConfirmButton: false,
                 timer: 1500
             });
@@ -60,7 +66,7 @@ const CreateTask = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="card flex-shrink-0 lg:w-[45rem] border-[2px] bg-cyan-700 bg-opacity-40 shadow-none border-slate-500">
                     <div className="card-body">
-                        <h1 className="text-3xl text-center text-black font-bold">Create a Task</h1>
+                        <h1 className="text-3xl text-center text-black font-bold">Edit Task</h1>
 
                         <div className="form-control">
                             <label className="label">
@@ -73,6 +79,7 @@ const CreateTask = () => {
                                 placeholder="Title"
                                 className="input input-bordered"
                                 required
+                                defaultValue={title}
                             />
                             {errors.title && <span>This field is required</span>}
                         </div>
@@ -87,6 +94,7 @@ const CreateTask = () => {
                                 name="description"
                                 placeholder=" Description"
                                 className="input h-[6rem] input-bordered"
+                                defaultValue={description}
                                 required
                             />
                             {errors.description && <span>This field is required</span>}
@@ -101,6 +109,7 @@ const CreateTask = () => {
                                 name="deadLine"
                                 placeholder="Dead Line"
                                 className="input input-bordered"
+                                defaultValue={deadLine}
                                 required
                             />
                             {errors.shortDescription && <span>This field is required</span>}
@@ -113,11 +122,11 @@ const CreateTask = () => {
                             <label className="label">
                                 <span className="label-text text-white font-bold">Priority</span>
                             </label>
-                            <select {...register('priority', { required: true })} className="select select-bordered" required>
+                            <select defaultValue={priority} {...register('priority', { required: true })} className="select select-bordered" required>
                                 <option value="" className="font-bold" disabled>
                                     Select Priority:
                                 </option>
-                                <option value="low">Low</option>
+                                <option  value="low">Low</option>
                                 <option value="moderate">Moderate</option>
                                 <option value="high">High</option>
                                 
@@ -132,7 +141,7 @@ const CreateTask = () => {
 
                         <div className="form-control mt-6">
                             <button type="submit" className="btn text-white bg-black">
-                                Create Task
+                                Done
                             </button>
                         </div>
                     </div>
@@ -149,4 +158,4 @@ const CreateTask = () => {
     );
 };
 
-export default CreateTask;
+export default EditTask;
