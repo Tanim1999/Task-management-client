@@ -75,7 +75,7 @@ const LogIn = () => {
                
                 e.target.reset()
                
-                navigate('/dasBoard/dashHome')
+                navigate('/dashBoard/dashHome')
                 
 
             })
@@ -97,7 +97,7 @@ const LogIn = () => {
         <div className=" min-h-screen">
             
             <div>
-                <div className="hero min-h-screen bg-contain" style={{ backgroundImage: 'url(https://i.ibb.co/TBDp1mT/59a36f03-e377-49cd-af79-2ea2d45356ca.jpg)' }}>
+                <div className="hero min-h-screen bg-contain" style={{ backgroundImage: 'url(https://i.ibb.co/52hD2fN/646413ce-ab1b-461d-a47d-81969323141b.jpg)' }}>
                     <div className="hero-content flex-col lg:flex-row">
 
                         <form onSubmit={handleLoginSubmit} >

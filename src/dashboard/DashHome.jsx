@@ -5,7 +5,7 @@ const DashHome = () => {
     const {user} = useAuth()
     return (
         <div>
-            welcome back {user.displayName}
+            welcome back {user?.displayName}
         </div>
     );
 };

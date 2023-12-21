@@ -76,7 +76,7 @@ const Register = () => {
         <div className=" min-h-screen mx-auto">
             
             <div>
-                <div className="hero bg-contain min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/TBDp1mT/59a36f03-e377-49cd-af79-2ea2d45356ca.jpg)' }}>
+                <div className="hero bg-contain min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/52hD2fN/646413ce-ab1b-461d-a47d-81969323141b.jpg)' }}>
                     <div className="hero-content flex-col lg:flex-row">
 
                         <form onSubmit={handleSubmit(onSubmit)} >
