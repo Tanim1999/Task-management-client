@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import WhoUseUs from "./WhoUseUs";
 import Banner from "./banner";
 
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
 
             <WhoUseUs></WhoUseUs>
+            <Footer></Footer>
         </div>
     );
 };
