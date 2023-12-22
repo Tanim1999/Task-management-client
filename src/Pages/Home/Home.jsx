@@ -1,3 +1,4 @@
+import WhoUseUs from "./WhoUseUs";
 import Banner from "./banner";
 
 
@@ -6,6 +7,8 @@ const Home = () => {
         <div>
             
             <Banner></Banner>
+
+            <WhoUseUs></WhoUseUs>
         </div>
     );
 };

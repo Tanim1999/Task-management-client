@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -8,7 +10,7 @@ const Banner = () => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold text-white">Welcome to the TaskSwift</h1>
                     <p className="mb-5 font-bold text-white">Easily manage your tasks and enhance your productivity</p>
-                    <button className="btn bg-black text-white">Explore</button>
+                    <Link to="/logIn"><button className="btn bg-black text-white">Let's Explore</button></Link>
                 </div>
             </div>
         </div>

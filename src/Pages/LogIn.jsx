@@ -126,7 +126,7 @@ const LogIn = () => {
 
                                          
                                 </div>
-                                <p className="font-bold text-center text-white">Do not have an account? <Link to="/register"> <span className=" text-red-500">register</span></Link></p>
+                                <p className="font-bold text-center text-white">Do not have an account? <Link to="/register"> <span className=" text-cyan-500">register</span></Link></p>
                                 <p className="text-center my-5 text-white font-bold">Sign in with <button onClick={handleGoogleSignin} className="btn bg-black text-white text-3xl font-bold"> <FcGoogle></FcGoogle>  </button></p>
                             </div>
 

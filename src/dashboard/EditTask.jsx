@@ -141,7 +141,7 @@ const EditTask = () => {
 
                         <div className="form-control mt-6">
                             <button type="submit" className="btn text-white bg-black">
-                                Done
+                                Save
                             </button>
                         </div>
                     </div>
