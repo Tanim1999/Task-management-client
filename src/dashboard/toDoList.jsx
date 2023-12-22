@@ -141,7 +141,7 @@ const ToDoList = () => {
     console.log("is over in ToDoList?", isOverToDo, isOverOngoing, isOverFinished);
 
     return (
-        <div className="flex w-full justify-center gap-5">
+        <div className=" md:flex w-full justify-center gap-5">
             <div ref={dropToDo} className={`flex-1 ${isOverToDo?" bg-slate-300 rounded-lg":""}`}>
                 <h2 className="font-bold text-cyan-500 border-2 border-cyan-500 p-3 rounded-lg text-3xl text-center my-5">
                     To-do
@@ -150,6 +150,7 @@ const ToDoList = () => {
                     {todo.map((task) => (
                         <TaskCard key={task._id} task={task}></TaskCard>
                     ))}
+                    {todo.length==0?<><p className="text-center text-2xl text-cyan-500 font-bold ">No task yet</p></>:""}
                 </div>
             </div>
             <div ref={dropOngoing} className={`flex-1 ${isOverOngoing?"bg-slate-300 rounded-lg":""}`}>
@@ -160,6 +161,7 @@ const ToDoList = () => {
                     {ongoings.map((ongoing) => (
                         <TaskCard key={ongoing._id} task={ongoing}></TaskCard>
                     ))}
+                    {ongoings.length==0?<><p className="text-center text-2xl text-cyan-500 font-bold ">No task yet</p></>:""}
                 </div>
             </div>
             <div ref={dropFinished} className={`flex-1 ${isOverFinished?"bg-slate-300 rounded-lg":""}`}>
@@ -170,6 +172,7 @@ const ToDoList = () => {
                     {finished.map((finish) => (
                         <TaskCard key={finish._id} task={finish}></TaskCard>
                     ))}
+                    {finished.length==0?<><p className="text-center text-2xl text-cyan-500 font-bold ">No task yet</p></>:""}
                 </div>
             </div>
         </div>
