@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/_a5c7cdfc-709d-4acc-8aa8-96da32bee1ff.jpeg"
 
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
     </>
     
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-cyan-500">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -21,16 +22,14 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl"> <img className="w-14 h-14 rounded-full" src={logo}  /></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal gap-4 px-1">
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
-            </div>
+            
         </div>
     );
 };

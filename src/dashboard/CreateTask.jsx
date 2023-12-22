@@ -58,7 +58,7 @@ const CreateTask = () => {
     return (
         <div className=" flex justify-center my-5">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="card flex-shrink-0 lg:w-[45rem] border-[2px] bg-cyan-700 bg-opacity-40 shadow-none border-slate-500">
+                <div className="card flex-shrink-0 lg:w-[45rem] border-[2px] bg-cyan-500  shadow-none border-slate-500">
                     <div className="card-body">
                         <h1 className="text-3xl text-center text-black font-bold">Create a Task</h1>
 

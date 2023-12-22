@@ -8,7 +8,7 @@ const Banner = () => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold text-white">Welcome to the TaskSwift</h1>
                     <p className="mb-5 font-bold text-white">Easily manage your tasks and enhance your productivity</p>
-                    <button className="btn bg-sky-700 text-white">Explore</button>
+                    <button className="btn bg-black text-white">Explore</button>
                 </div>
             </div>
         </div>

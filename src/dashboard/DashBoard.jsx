@@ -12,10 +12,10 @@ const DashBoard = () => {
 
     const navOptions =
         <>
-            <li> <NavLink to="/dashBoard/dashHome"> Home</NavLink> </li>
+            <li> <NavLink to="/dashBoard/dashHome"> My Tasks</NavLink> </li>
             <li> <NavLink to="/dashBoard/createTask"> Create a task</NavLink> </li>
             <li>
-                    <button onClick={handleLogout} className="btn text-white bg-[#175f82]">Logout</button>
+                    <button onClick={handleLogout} className="btn mt-10 text-white bg-black">Logout</button>
 
                 </li>
         </>
@@ -32,7 +32,7 @@ const DashBoard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 min-h-full bg-[#175f82] font-bold uppercase  text-white">
+                <ul className="menu p-4 w-80 min-h-full bg-cyan-500 font-bold uppercase  text-white">
                   
                     <div className="flex items-center gap-3 my-5" >
 

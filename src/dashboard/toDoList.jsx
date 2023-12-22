@@ -142,8 +142,8 @@ const ToDoList = () => {
 
     return (
         <div className="flex w-full justify-center gap-5">
-            <div ref={dropToDo} className="flex-1">
-                <h2 className="font-bold text-3xl text-center my-5">
+            <div ref={dropToDo} className={`flex-1 ${isOverToDo?" bg-slate-300 rounded-lg":""}`}>
+                <h2 className="font-bold text-cyan-500 border-2 border-cyan-500 p-3 rounded-lg text-3xl text-center my-5">
                     To-do
                 </h2>
                 <div>
@@ -152,8 +152,8 @@ const ToDoList = () => {
                     ))}
                 </div>
             </div>
-            <div ref={dropOngoing} className="flex-1">
-                <h2 className="font-bold text-3xl text-center my-5">
+            <div ref={dropOngoing} className={`flex-1 ${isOverOngoing?"bg-slate-300 rounded-lg":""}`}>
+                <h2 className="font-bold text-cyan-500 text-3xl border-2 border-cyan-500 rounded-lg p-3  text-center my-5">
                     On-going
                 </h2>
                 <div>
@@ -162,9 +162,9 @@ const ToDoList = () => {
                     ))}
                 </div>
             </div>
-            <div ref={dropFinished} className="flex-1">
-                <h2 className="font-bold text-3xl text-center my-5">
-                    Finished
+            <div ref={dropFinished} className={`flex-1 ${isOverFinished?"bg-slate-300 rounded-lg":""}`}>
+                <h2 className="font-bold text-cyan-500 text-3xl border-2 p-3 rounded-lg border-cyan-500 text-center my-5">
+                    Completed
                 </h2>
                 <div>
                     {finished.map((finish) => (
