@@ -4,22 +4,22 @@ import useAxiosPublic from "./useAxiosPublic";
 
 
 
-const useTasks= () => {
+const useToDo= () => {
     const {user}= useAuth()
     
     
     const axiosPublic = useAxiosPublic();
    
-    const {data: tasks = [],  refetch} = useQuery({
-        queryKey: ['tasks',user],
+    const {data: todo = [],  refetch:reTodo} = useQuery({
+        queryKey: ['todo',user],
         queryFn: async() =>{
-            const res = await axiosPublic.get(`/tasks?email=${user.email}`);
+            const res = await axiosPublic.get(`/tasks?email=${user.email}&status=to-do`);
             return res.data;
         }
     })
 
 
-    return [tasks, refetch]
+    return [todo, reTodo]
 };
 
-export default useTasks
+export default useToDo
